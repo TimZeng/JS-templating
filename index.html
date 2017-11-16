@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>JS Templating</title>
+  <!--
+    custom template
+  -->
+  <script type="text/template" id="tpl">
+    <div class="product">
+      <div class="imageContainer">
+        <img src="{#img#}">
+        <div class="layer">
+          <p>Search</p>
+          <p>Like</p>
+        </div>
+
+        <div class="content">
+          <p class="price">
+            <span class="price-text">$ {#price#}&nbsp;</span>
+            <span class="sales"> {#sales#} bought</span>
+          </p>
+
+          <p class="title">{#title#}</p>
+          <p class="store">
+            <span class="store-text">{#store#}</span>
+            <span class="address">{#address#}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </script>
+</head>
+<body>
+  <div id='app'></div>
+  <script type="text/javascript">
+    const Util = {
+      getId: function(id) {
+        return document.getElementById(id);
+      },
+
+      ajax: function(url, callback) {
+        // create xhr Object
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+          // if request is complete
+          if ( xhr.readyState === 4 ) {
+
+            // if request status code is 200 OK
+            if ( xhr.status === 200 ) {
+              const data = xhr.responseText;
+              !!callback && callback(data);
+            }
+          }
+        }
+
+        xhr.open( 'get', url, true );
+        xhr.send( null );
+      }
+    }
+    // example of send request and handle data:
+
+    // Util.ajax('/data/list.json', (data) => {
+
+    //   const list = JSON.parse(data).list;
+    //   console.log(list);
+    //   let html = ''
+    //   for ( let i = 0; i < list.length; i++ ) {
+    //     html += `<div>${list[i].address}</div>`
+    //   }
+    //   Util.getId('app').innerHTML = html;
+    // });
+
+    // retrive template
+    const tpl = Util.getId('tpl').innerHTML;
+
+    const formString = (str, data) => {
+      // replace template with data
+      return str.replace(/\{#(\w+)#\}/g, (match, name, index) => data[name]);
+    };
+
+    let html = '';
+
+    Util.ajax('/data/list.json', data => {
+      const list = JSON.parse(data).list;
+
+      for ( let i = 0; i < list.length; i++ ) {
+        html += formString(tpl, list[i]);
+      }
+
+      Util.getId('app').innerHTML = html;
+    });
+
+
+  </script>
+</body>
+</html>

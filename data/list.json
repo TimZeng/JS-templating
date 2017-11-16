@@ -1,0 +1,102 @@
+
+{
+	"errno": 0,
+	"list": [
+		{
+			"img": "https://img.grouponcdn.com/deal/4Ced7BawCtJW4K6tFdaR57xVyGhb/4C-1000x600/v1/c414x250q50.jpg",
+			"price": "9.99",
+			"sales": "1000+",
+			"title": "Men's Fleece Jogger Pants with Contrast Trim ",
+			"store": "Pants store",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/4GVrpW14fTMXGo22VjtD6MctDBdZ/4G-1500x900/v1/c414x250q50.jpg",
+			"price": "139.99",
+			"sales": "1250+",
+			"title": "Fitbit Charge 2 Fitness Wristband ",
+			"store": "Digit Store",
+			"address": "San Jose"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/3fuktjHX2ZfoXHAvE66M/zY-2048x1229/v1/c349x211q85.jpg",
+			"price": "124.00",
+			"sales": "126",
+			"title": "Up to 78% off Teeth Whitening",
+			"store": "Opera Plaza Dentistry",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/4XjHwYcJj2BrJtYSjv6utkXKvseN/4X-960x576/v1/c349x211q85.jpg",
+			"price": "12.50",
+			"sales": "9,166",
+			"title": "Up to 38% off Mel's Drive-In",
+			"store": "Mel's Drive-in- San Francisco",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/2dFamTGvqqgPYTnp7yDfLkX6x6ZD/2d-1000x600/v1/c349x211q85.jpg",
+			"price": "18.99",
+			"sales": "550+",
+			"title": "Women's Long-Sleeve Ribbed Blouse",
+			"store": "Clothing Store",
+			"address": "Fremont"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/41DJNWzBXg5AexqGhmaknNxKTn6b/41-700x420/v1/c349x211q85.jpg",
+			"price": "Free",
+			"sales": "220+",
+			"title": "GameFly Video-Game Subscription",
+			"store": "GameFly",
+			"address": "San Mateo"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/31cxjfMgAQ4G4WegL4rCkfrZ6xz9/31-880x528/v1/c349x211q85.jpg",
+			"price": "114",
+			"sales": "3085",
+			"title": "Up to 32% off New Year's Eve 2018",
+			"store": "Palace of Fine Arts: New Year’s Eve 2018",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/jveHykmxqZ6mtwdcrcgi/qY-2048x1229/v1/c349x211q85.jpg",
+			"price": "15.50",
+			"sales": "1,046",
+			"title": "Up to 52% off Japanese Food",
+			"store": "Blue Fin Sushi",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/iam/svqtNUix4eF7vbAJiijk2RfXLSd/sv-2048x1229/v1/c349x211q85.jpg",
+			"price": "29.00",
+			"sales": "820+",
+			"title": "Up to 52% off Brazilian Wax",
+			"store": "Milk",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/9uqJt6syr4JZWg8FetV6/2b-2048x1229/v1/c349x211q85.jpg",
+			"price": "36.00",
+			"sales": "221",
+			"title": "5 or 10 Classes at The Park Gym (Up to 81% Off)",
+			"store": "The Park Gym",
+			"address": "San Francisco"
+		},
+		{
+			"img": "https://img.grouponcdn.com/deal/2ftxaRezaD6oheMjGJyNBfYd2YGJ/2f-700x420/v1/c349x211q85.jpg",
+			"price": "16.00",
+			"sales": "490+",
+			"title": "In-Studio Photo Shoot with Prints from Picture People",
+			"store": "Picture People",
+			"address": "San Bruno"
+		},
+		{
+			"img": "https://img.grouponcdn.com/iam/3T5Y6Y8e5VzxBjUYbRz9DBJ7Ceko/3T-2048x1229/v1/c349x211q85.jpg",
+			"price": "36.00",
+			"sales": "611",
+			"title": "Up to 60% off 60-Minute Swedish Massages",
+			"store": "3R Massage & Bodyworks",
+			"address": "San Francisco"
+		}
+	]
+}
