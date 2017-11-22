@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<title>Expandable List</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			#container {
+				border: 1px solid black;
+				width: 300px;
+				margin: 100px auto;
+			}
+			#container p {
+				background-color: black;
+				color: #ffffff;
+				padding: 5px 10px;
+				border: 1px solid #ffffff;
+			}
+			#container ul {
+				display: none;
+			}
+			#container li {
+				border-bottom: 1px solid grey;
+				padding: 5px 15px;
+			}
+			#container .active p {
+				background-color: orange;
+			}
+			
+			#container .active ul {
+				display: block;
+			}
+		</style>
+		
+		<!-- Template for list -->
+		<script type='text/template' id='expandable-list'>
+			<div class='{#className#}' id='{#id#}'>
+				<p>{#title#}</p>
+				<ul>{#children#}</ul>
+			</div>
+		</script>
+		
+		<!-- Template for list item -->
+		<script type='text/template' id='list-item'>
+			<li id='{#id#}'>{#item#}</li>
+		</script>
+		
+	</head>
+	<body>
+		<div id='container'></div>
+		
+		<script type='text/javascript'>
+			// data for this page
+			const data = [
+				{
+					title: 'Work',
+					items: ['collect data','write report','meeting']
+				},
+				{
+					title: 'Family',
+					items: ['buy food','cook dinner','walk dog']
+				},
+				{
+					title: 'Personal',
+					items: ['read book','work out','classes']
+				}
+			];
+			
+			// this is a static component
+			function ListItem(item) {
+				// setup reference
+				this.id = makeid();
+				
+				// define data to be render
+				this.item = item;
+				
+				// get template of this component
+				this.template = document.getElementById('list-item').innerHTML;	
+				
+				
+				// render method
+				// because this is a static component without event binding
+				// just return HTML tags in string format
+				// TODO: should render a DOM node instead of a string
+				this.render = function() {
+					return this.template.replace(/\{#(\w+)#\}/g, (match, word) => {
+						return this[word];
+					});
+				};
+			};
+			
+			
+			// this is a dynamic component
+			function ExpandableList({ title, items }, parentId) {
+				// setup references
+				this.id = makeid();
+				this.parent = document.getElementById(parentId);
+				
+				// define data to be rendered
+				this.title = title;
+				this.children = items.reduce((a,c) => {
+					a += new ListItem(c).render();
+					return a;
+				}, '');
+				this.active = false; // need to change
+				this.className = this.active ? 'active' : '';
+				
+				// define component reference
+				this.component = null;
+				
+				// get component template
+				this.template = document.getElementById('expandable-list').innerHTML;
+				
+				// render method
+				this.render = function() {
+					if ( !this.component ) {
+						// initial render
+						const content = this.template.replace(/\{#(\w+)#\}/g, (match, word) => {
+							return this[word];
+						});
+						
+						// create new component based on template &&
+						// save reference to this.component
+						const newElement = document.createElement('div');
+						newElement.innerHTML = content;
+						this.component = newElement.children[0];
+						
+						// bind action to click event
+						this.component.onclick = activate.bind(this);
+						
+						// append component to parent node
+						this.parent.appendChild(this.component);
+					} else {
+						// update component (only for this example)
+						// TODO: update component based on changes
+						// not hard code like this
+						this.component.className = this.active ? 'active' : '';
+					}
+				};
+				
+				// render the component
+				this.render();
+			};
+			
+			// helper function to create id for each component
+			const makeid = () => {
+				var text = "";
+				const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+				for (var i = 0; i < 5; i++)
+					text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+				return text;
+			};
+			
+			// action to be binded to click event
+			function activate() {
+				this.active = !this.active;
+				this.render();
+			};
+			 			
+			// render components based on data
+			for ( let i = 0; i < data.length; i++ ) {
+				new ExpandableList(data[i], 'container');
+			}
+
+		</script>
+	</body>
+</html>
