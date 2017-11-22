@@ -1,5 +1,5 @@
-# JS-templating
-Template Engine with pure JavaScript
+# Render Static template
+Template Engine with plain JavaScript
 
 ## Getting Started
 
