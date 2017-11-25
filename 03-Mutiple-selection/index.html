@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+	<head>
+		<title>Multiple Selection</title>
+		
+		<!-- define template for static components -->
+		<script type='text/template' id='display'>
+			<p class='display'>Selected Items: {#data#}</p>
+		</script>
+		
+		<script type='text/template' id='btn'>
+			<p class='btn {#className#}'>{#text#}</p>
+		</script>
+		
+		<script type='text/template' id='list-item'>
+			<li>{#text#}</li>
+		</script>
+		
+		<link rel='stylesheet' type='text/css' href='style.css'>
+	</head>
+	<body>
+	
+		<!-- this is the target tag to render the app -->
+		<div id='app'></div>
+		
+		<!-- load components -->
+		<script type='text/javascript' src='components/components.js'></script>
+		
+		<script type='text/javascript'>
+		
+			// data to be rendered
+			const SevenStepsToSuccess = [
+				'Decide What You Want',
+				'Write it Down',
+				'Set a Deadline',
+				'Make a List',
+				'Organize Your List',
+				'Take Action',
+				'Do Something Every Day'
+			];
+			
+			// render App component with data to app div element
+			new App(SevenStepsToSuccess, document.getElementById('app'));
+			
+		</script>
+	</body>
+</html>

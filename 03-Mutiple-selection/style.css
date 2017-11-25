@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+			
+#app {
+	width: 600px;
+	margin: 100px auto;
+}
+			
+#app .display {
+	border: 1px solid pink;
+	padding: 5px;
+	margin-bottom: 12px;
+	padding: 5px 12px;
+	line-height: 20px;
+}
+			
+#app ul {
+	margin-bottom: 12px;
+}
+			
+#app ul li {
+	height: 35px;
+	line-height: 35px;
+	text-indent: 50px;
+	border: 1px solid white;
+	background: url('img/ck.png') no-repeat 10px 7px;
+	cursor: pointer;
+}
+
+#app ul li.checked,
+#app .btn.checked {
+	background-image: url('img/cked.png');
+}
+
+#app ul li:nth-child(2n) {
+	background-color: #f4f4f4;
+}
+			
+#app ul li:nth-child(2n-1) {
+	background-color: #e0e0e0;
+}
+			
+#app .btn {
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	padding-right: 10px;
+	margin-right: 30px;
+	text-indent: 35px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	background: url('img/ck.png') no-repeat 10px 7px;
+	cursor: pointer;
+}
