@@ -126,7 +126,6 @@ function App(data, parent) {
 	// set initial value of component level state
 	this.state = {
 		checked: [],
-		all: false,
 		data: data
 	};
 	
@@ -153,11 +152,11 @@ function App(data, parent) {
 		index >= 0 ? checked.splice(index, 1) : checked.push(text);
 		
 		// update component state
-		this.setState({ checked, all: false });
+		this.setState({ checked });
 	}
 	
 	// define component method to select all
-	this.selectAll = () => this.setState({ checked: this.state.data.slice(), all: true });
+	this.selectAll = () => this.setState({ checked: this.state.data.slice() });
 	
 	// define component method to reverse select
 	this.selectReverse = () => {
@@ -168,7 +167,7 @@ function App(data, parent) {
 		const newSelect = this.state.data.filter(ele => checked.indexOf(ele) === -1);
 		
 		// update component state
-		this.setState({ checked: newSelect, all: false });
+		this.setState({ checked: newSelect });
 	};
 	
 	// define child components rendering
@@ -182,9 +181,10 @@ function App(data, parent) {
 	});
 	
 	this.renderButtons = () => {
+		const { checked, data } = this.state;
 		const allParams = {
 			text: 'Select All',
-			className: `all ${this.state.all?'checked':''}`,
+			className: `all ${checked.length === data.length?'checked':''}`,
 			parent: this.component,
 			func: this.selectAll
 		};
