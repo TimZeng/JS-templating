@@ -4,7 +4,8 @@ This repo is for building interactive web component with plain JavaScript, HTML5
 ## Check out the mini projects if you are interested.
 
 * [01-Static-listing](https://github.com/TimZeng/JS-templating/tree/master/01-Static-listing)
-* [02-Expandable-List](https://github.com/TimZeng/JS-templating/tree/master/02-Expandable-list)
+* [02-Expandable-list](https://github.com/TimZeng/JS-templating/tree/master/02-Expandable-list)
+* [03-Multiple-selection](https://github.com/TimZeng/JS-templating/tree/master/03-Multiple-selection)
 
 ## Built With
 
