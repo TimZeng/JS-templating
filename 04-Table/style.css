@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, san-serif;
+}
+
+#app {
+	width: 600px;
+	margin: 100px auto;
+	border: 1px solid black;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	color: #ffffff;
+	background-color: #9cccaa;
+}
+
+td {
+	text-align: center;
+	background-color: #f1f2ec;
+}
+
